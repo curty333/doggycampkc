@@ -241,7 +241,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
-  figaro (~> 1.0.0)
+  figaro
   fog
   jbuilder (~> 2.0)
   jquery-rails

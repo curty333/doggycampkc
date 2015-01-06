@@ -47,6 +47,6 @@ group :development, :test do
   gem 'pg', group: :production
   gem 'carrierwave'
   gem "fog"
-  gem "figaro", '~>1.0.0'
+  gem "figaro"
 end
 
