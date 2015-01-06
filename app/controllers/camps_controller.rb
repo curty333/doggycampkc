@@ -69,6 +69,6 @@ class CampsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def camp_params
-      params.require(:camp).permit(:name, :address, :phone, :website)
+      params.require(:camp).permit(:name, :address, :phone, :website, :image)
     end
 end
