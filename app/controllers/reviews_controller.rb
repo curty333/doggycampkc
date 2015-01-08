@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_camp
   before_action :set_review, only: [:edit, :update, :destroy]
 
   respond_to :html
@@ -18,6 +19,7 @@ class ReviewsController < ApplicationController
   def create 
 @review = Review.new(review_params) 
 @review.user_id = current_user.id 
+@review.camp_id = @camp.id
 
 flash[:notice] = "Review was successfully created." if @review.save 
 respond_with(@review, :location => root_path) 
@@ -36,6 +38,10 @@ end
   private
     def set_review
       @review = Review.find(params[:id])
+    end
+
+    def set_camp
+      @camp = Camp.find(params[:camp_id])
     end
 
     def review_params
